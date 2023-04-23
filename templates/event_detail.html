@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/event.css" />
+    <title>Event Detail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="b1">
+<!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+      <div class="head">{{ title }}</div>
+<!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+      <div class="content">
+          {{ description }}
+      </div>
+
+<!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+      <div class="venue">
+        <div class="venue1">
+          <div class="venue11">Level</div>
+          <div class="venue12">{{ level }}</div>
+        </div>
+        <div class="venue1">
+          <div class="venue11">Country</div>
+          <div class="venue12">{{ country }}</div>
+        </div>
+        <div class="venue1">
+          <div class="venue11">City</div>
+          <div class="venue12">{{ city }}</div>
+        </div>
+        <div class="venue1">
+          <div class="venue11">Address</div>
+          <div class="venue12">{{ add1 }}<br>{{ add2 }}<br>{{ region }}<br>{{ city }}<br>{{ postal_code }}</div>
+        </div>
+        <div class="venue1">
+          <div class="venue11">Start Time</div>
+          <div class="venue12">{{ startdate }}<p> </p>{{ statttime }}</div>
+        </div>
+        <div class="venue1">
+          <div class="venue11">End Time</div>
+          <div class="venue12">{{ enddate }}<p> </p>{{ endtime }}</div>
+        </div>
+        <div class="venue1">
+          <div class="venue11">Hosted By -</div>
+          <div class="venue12">{{ owner }}</div>
+        </div>
+        <div class="venue1">
+          <div class="venue11">Email</div>
+          <div class="venue12">{{ mail }}</div>
+        </div>
+      </div>
+<!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+      <button><a href="/thankyou" style="color: white">I Will Attend</a></button>
+    </div>
+    <div class="b2"><img src="{{ thumb }}" alt="" /></div>
+  </body>
+</html>

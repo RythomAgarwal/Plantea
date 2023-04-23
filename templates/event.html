@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+    <link rel="stylesheet" href="../static/css/event_card.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+      <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../static/css/style.css" />
+  </head>
+  <body>
+<div class="container d-flex justify-content-center">
+      <!-- Desktop Left Sidebar -->
+      <section
+        class="d-none d-lg-flex flex-column left-column border-right border-1"
+      >
+        <ul class="list-group pr-4 mt-4">
+          <li
+            class="list-group-item d-flex justify-content-start align-items-center px-3 mb-2"
+          >
+            <a
+              href="#"
+              id="logo"
+              class="text-reset text-decoration-none sidebar-link sidebar-link-active rounded-pill">
+            <img src="../static/img/tree.svg" style="width: 64px"/>
+
+            </a>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-start align-items-center"
+          >
+            <a
+              href="/"
+              class="text-reset text-decoration-none sidebar-link sidebar-link-active rounded-pill"
+            >
+              <img class="sidebar-link-icon" src="../static/img/ic-house.svg" style="filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(0%);"/>
+              <span class="sidebar-link-text ml-3">Home</span>
+            </a>
+          </li>
+            <a
+              href="/event"
+              class="text-reset text-decoration-none sidebar-link rounded-pill"
+            >
+              <img
+                class="sidebar-link-icon"
+                style="filter: invert(85%) sepia(6%) saturate(4164%) hue-rotate(78deg) brightness(84%) contrast(84%);"
+                src="../static/img/ic-file-text.svg"
+              />
+              <span class="sidebar-link-text ml-3">Events</span>
+            </a>
+            <a
+              href="/event/create"
+              class="text-reset text-decoration-none sidebar-link rounded-pill"
+            >
+              <img
+                class="sidebar-link-icon"
+
+                src="../static/img/plus.svg"
+              />
+              <span class="sidebar-link-text ml-3">Create Event</span>
+            </a>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-start align-items-center"
+          >
+            <a
+              href="/logout"
+              class="text-reset text-decoration-none sidebar-link rounded-pill"
+            >
+              <img class="sidebar-link-icon" src="../static/img/exit.svg" />
+              <span class="sidebar-link-text ml-3">Log Out</span>
+            </a>
+          </li>
+
+        </ul>
+        <div class="mt-auto d-flex align-items-start justify-content-between pr-4">
+          <div class="mt-auto d-flex align-items-start">
+            <div class="d-flex justify-content-between mb-2">
+              <a class="round-avatar" href="#"
+                ><span style="background-image: url('{{ onepfp }}')" class="profile-icon"></span
+              ></a>
+            </div>
+            <div class="ml-2">
+              <p class="profile-name font-weight-bold mb-0">
+                  {{ onename }}
+              </p>
+              <p class="profile-username text-muted">@{{ oneusername }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+     <div id="tweets-feed" class="container center-column">
+
+          {% for data in event %}
+
+            <div class="cardBody">
+      <div class="cardUpper">
+        <div class="date"><div>{{ data[20]}}</div><div>{{ data[21] }}</div></div>
+        <div class="global">Global</div>
+        <div class="banner"><img src="{{ data[14] }}" alt="Banner Image"></div>
+      </div>
+      <div class="cardLower">
+        <div class="title cardLower1">{{ data[15] }}</div>
+        <div class="location cardLower1">{{ data[6] }}</div>
+
+        <button class="cardLower1" ><a href="/event/detail?title={{ data[15] }}" style="color: white">Join</a></button>
+
+      </div>
+    </div>
+{% endfor %}
+
+        </div>
+</div>
+<!-- Bottom Nav Bar -->
+    <nav class="nav fixed-bottom nav-pills nav-justified bottom-nav d-lg-none">
+      <a class="nav-item nav-link" href="/"><span style="filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(0%);" class="ic-house"></span></a>
+      <a class="nav-item nav-link" href="/event"><span style="filter: invert(85%) sepia(6%) saturate(4164%) hue-rotate(78deg) brightness(84%) contrast(84%);" class="ic-list"></span></a>
+      <a class="nav-item nav-link" href="/event/create"><span style="filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(0%);" class="plus"></span></a>
+      <a class="nav-item nav-link" href="/logout"><span style="filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(0%);" class="leave"></span></a>
+
+
+    </nav>
+
+  <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

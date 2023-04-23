@@ -1,0 +1,103 @@
+.tweet {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  position: relative;
+  overflow: hidden;
+}
+
+.tweet::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 70px;
+  width: 100%;
+  background-repeat: repeat-x;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.tweet-header {
+  display: flex;
+  align-items: center;
+}
+
+.profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.display-name {
+  font-weight: bold;
+  color: #00b050;
+}
+
+.username {
+  color: #757575;
+  margin-left: 6px;
+}
+
+.tweet-body {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.tweet-body p {
+  margin: 0;
+}
+
+.tweet:hover {
+  box-shadow: 0px 5px 10px #ccc;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+@media only screen and (max-width: 768px) {
+  .profile-picture {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .display-name {
+    font-size: 16px;
+  }
+  
+  .tweet-body {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .tweet {
+    padding: 5px;
+    border-radius: 0;
+  }
+  
+  .tweet-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .profile-picture {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .tweet-body {
+    margin-top: 5px;
+  }
+  
+  .display-name {
+    font-size: 18px;
+  }
+  
+  .username {
+    font-size: 16px;
+    margin-left: 1px;
+  }
+}
+

@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Overpass", sans-serif;
+}
+
+body {
+  position: relative;
+  height: auto;
+}
+
+.head {
+  font-size: 9vh;
+  font-weight: 500;
+  margin-bottom: 3vh;
+}
+
+.content {
+  margin-bottom: 3vh;
+  color: #414141;
+  line-height: 25px;
+}
+.venue1 {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.venue11 {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 18px;
+}
+
+.venue12 {
+  color: #414141;
+}
+
+.b2 {
+  padding-top: 6%;
+  width: auto;
+}
+
+img {
+  width: 95%;
+}
+
+button{
+  margin: 17px 0 0 0;
+  width: 100px;
+  height: 43px;
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+@media only screen and (max-width: 800px) {
+  body {
+    display: block;
+  }
+
+  .b1 {
+    margin: 5% 8% 0% 8%;
+  }
+
+  .b2 {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .b1 {
+    width: 40%;
+    margin: 5% 0% 0% 8%;
+    padding-bottom: 14px; 
+  }
+
+  body {
+    display: flex;
+  }
+
+  .b2 {
+    height: 100vh;
+    padding-top: 6%;
+    width: auto;
+    top: 0;
+    padding-left: 5%;
+    position: sticky;
+  }
+
+  img {
+    width: 95%;
+  }
+
+}

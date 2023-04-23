@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!---Coding By CodingLab | www.codinglabweb.com--->
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <!--<title>Registration Form in HTML CSS</title>-->
+      <!---Custom CSS File--->
+      <link rel="stylesheet" href="../static/css/event_create.css" />
+   </head>
+   <body>
+      <section class="container">
+         <header>Create An Event!</header>
+         <form class="form" method="post">
+            <div class="input-box">
+               <label style="font-size: 30px">User Detail</label><br>
+               <label>Full Name</label>
+               <input type="text" placeholder="Enter full name" required name="name"/>
+            </div>
+            <div class="input-box">
+               <label>Email Address</label>
+               <input type="text" placeholder="Enter email address" required name="email"/>
+            </div>
+            <div class="column">
+               <div class="input-box">
+                  <label>Phone Number</label>
+                  <input type="number" placeholder="Enter phone number" required name="phone"/>
+               </div>
+               <div class="input-box">
+                  <label>Birth Date</label>
+                  <input type="date" placeholder="Enter birth date" required name="dob"/>
+               </div>
+            </div>
+            <div class="gender-box">
+               <h3>Gender</h3>
+               <div class="gender-option">
+                  <div class="gender">
+                     <input type="radio" name="gender"  value="Male"/>
+                     <label for="check-male">Male</label>
+                  </div>
+                  <div class="gender">
+                     <input type="radio" name="gender" value="Female"/>
+                     <label for="check-female">Female</label>
+                  </div>
+                  <div class="gender">
+                     <input type="radio" name="gender" value="Prefer Not To Say"/>
+                     <label for="check-other">Prefer Not To Say</label>
+                  </div>
+               </div>
+            </div>
+            <br>
+            <label style="font-size: 30px">Event Detail</label><br>
+            <div class="gender-box">
+               <h3>Event Level</h3>
+               <div class="gender-option">
+                  <div class="gender">
+                     <input type="radio" name="level" value="Global"/>
+                     <label>Global</label>
+                  </div>
+                  <div class="gender">
+                     <input type="radio" name="level" value="Local"/>
+                     <label>Local</label>
+                  </div>
+               </div>
+            </div>
+            <div class="input-box address">
+               <label>Venue</label>
+               <input type="text" placeholder="Enter street address" required name="address1"/>
+               <input type="text" placeholder="Enter street address line 2" required name="address2"/>
+               <div class="column">
+                  <div class="select-box" >
+                     <select name="country">
+                        <option hidden>Country</option>
+                        <option>America</option>
+                        <option>Japan</option>
+                        <option>India</option>
+                        <option>Nepal</option>
+                     </select>
+                  </div>
+                  <input type="text" placeholder="Enter your city" required name="city" />
+               </div>
+               <div class="column">
+                  <input type="text" placeholder="Enter your region" required name="region"/>
+                  <input type="number" placeholder="Enter postal code" required name="postalcode"/>
+               </div>
+               <input type="text" placeholder="Title Of the Event" required name="title"/>
+               <label>
+               <textarea placeholder="Description Of the Event" required name="description"></textarea>
+               </label>
+               <input type="text" placeholder="Thumbnail link" required name="thumbnail"/>
+               <label style="font-size: 30px">Timing Of The Event</label><br>
+               <div class="column">
+                  <div class="input-box">
+                     <label>Start Date</label>
+                     <input type="date" placeholder="dd-mm-yyyy" required name="start_date"/>
+                  </div>
+                  <div class="input-box">
+                     <label>Start Time (24-Hour Format)</label>
+                     <input type="time" placeholder="hh-mm (24 Hour Format)" required name="start_time"/>
+                  </div>
+               </div>
+               <div class="column">
+                  <div class="input-box">
+                     <label>End Date</label>
+                     <input type="date" placeholder="dd-mm-yyyy" required name="end_date"/>
+                  </div>
+                  <div class="input-box">
+                     <label>End Time (24-Hour Format)</label>
+                     <input type="time" placeholder="hh-mm (24 Hour Format)" required name="end_time"/>
+                  </div>
+               </div>
+            </div>
+            <button type="submit">Submit</button>
+         </form>
+      </section>
+   </body>
+</html>
